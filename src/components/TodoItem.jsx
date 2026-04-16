@@ -1,10 +1,10 @@
 const TodoItem = (props) => {
   const {
-    className = "",
+    className = '',
     id,
     title,
     isDone,
-    onDeleteTaskButtonClick,
+    onDeleteOneItemClick,
     onTaskCompleteChange,
   } = props;
 
@@ -24,7 +24,7 @@ const TodoItem = (props) => {
         className="todo-item__delete-button"
         aria-label="Delete"
         title="Delete"
-        onClick={() => onDeleteTaskButtonClick(id)}
+        onClick={() => onDeleteOneItemClick(id)}
       >
         <svg
           width="20"
@@ -45,5 +45,4 @@ const TodoItem = (props) => {
     </li>
   );
 };
-
 export default TodoItem;

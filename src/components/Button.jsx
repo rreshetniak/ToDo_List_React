@@ -10,7 +10,7 @@ const Button = (props) => {
       type={type}>
         {children}
     </button>
-  );
+  )
 }
 
-export default Button;
+export default Button

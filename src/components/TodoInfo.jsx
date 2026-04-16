@@ -1,6 +1,12 @@
 const TodoInfo = (props) => {
-  const { total, done, onDeleteAllButtonClick } = props;
+  const {
+    total,
+    done,
+    onDeleteAllButtonClick,
+  } = props;
+
   const hasTasks = total > 0;
+  const handleClick = () => {console.log("Mother Fucker")};
   return (
     <div className="todo__info">
       <div className="todo__total-tasks">
@@ -9,14 +15,16 @@ const TodoInfo = (props) => {
       {hasTasks && (
         <button 
           className="todo__delete-all-button" 
-          type="button"
+          type="button" 
           onClick={onDeleteAllButtonClick}
-        >
+          >
           Delete all
         </button>
       )}
+      {/* <button className="todo__delete-all-button" type="button">
+        Delete all
+      </button> */}
     </div>
   );
 };
-
 export default TodoInfo;

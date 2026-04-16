@@ -1,9 +1,9 @@
-import Todo from "./components/Todo";
+import Todo from "./components/Todo"
 
 const App = () => {
   return (
     <Todo />
-  );
-};
+  )
+}
 
-export default App;
+export default App
