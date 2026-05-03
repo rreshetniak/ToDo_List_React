@@ -18,75 +18,6 @@ const Todo = () => {
   //   ];
   // });
 
-  // const [searchQuery, setSearchQuery] = useState("");
-  // const [newTaskTitle, setNewTaskTitle] = useState("");
-
-  // const newTaskInputRef = useRef(null);
-  // const firstIncompleteTaskRef = useRef(null);
-  // const firstIncompleteTaskId = tasks.find(({ isDone }) => !isDone)?.id;
-
-  // const deleteAllTasks = useCallback(() => {
-  //   const isConfirmed = confirm("Are you sure, that you want to delete all?");
-  //   console.log("Delete all tasks");
-  //   if (isConfirmed) {
-  //     setTasks([]);
-  //   }
-  // }, []);
-
-  // const deleteOneItem = useCallback(
-  //   (taskId) => {
-  //     setTasks(tasks.filter((task) => task.id !== taskId));
-  //   },
-  //   [tasks],
-  // );
-
-  // const toggleTaskComplete = useCallback(
-  //   (taskId, isDone) => {
-  //     setTasks(
-  //       tasks.map((task) => {
-  //         if (task.id === taskId) {
-  //           return { ...task, isDone };
-  //         }
-  //         return task;
-  //       }),
-  //     );
-  //   },
-  //   [tasks],
-  // );
-
-  // const addTask = useCallback(() => {
-  //   if (newTaskTitle.trim().length > 0) {
-  //     const newTask = {
-  //       id: crypto?.randomUUID() ?? Date.now().toString(),
-  //       title: newTaskTitle,
-  //       isDone: false,
-  //     };
-
-  //     setTasks((prevTasks) => [...prevTasks, newTask]);
-  //     setNewTaskTitle("");
-  //     setSearchQuery("");
-  //     newTaskInputRef.current.focus();
-  //   }
-  // }, [newTaskTitle]);
-
-  // useEffect(() => {
-  //   console.log("Save data to the storage, because Task was changed", tasks);
-  //   localStorage.setItem("tasks", JSON.stringify(tasks));
-  // }, [tasks]);
-
-  // useEffect(() => {
-  //   newTaskInputRef.current.focus();
-  // }, []);
-
-  // const filteredTasks = useMemo(() => {
-  //   const clearSearchQuery = searchQuery.trim().toLowerCase();
-
-  //   return clearSearchQuery.length > 0
-  //     ? tasks.filter(({ title }) =>
-  //         title.toLowerCase().includes(clearSearchQuery),
-  //       )
-  //     : null;
-  // }, [searchQuery, tasks]);
 
 const Todo = () => {
   const { firstIncompleteTaskRef } = useContext(TasksContext);
@@ -96,16 +27,8 @@ const Todo = () => {
 
       <div className="todo">
         <h1 className="todo__title">To Do List</h1>
-        <AddTaskForm
-          // addTask={addTask}
-          // newTaskTitle={newTaskTitle}
-          // setNewTaskTitle={setNewTaskTitle}
-          // newTaskInputRef={newTaskInputRef}
-        />
-        <SearchTaskForm
-          // searchQuery={searchQuery}
-          // setSearchQuery={setSearchQuery}
-        />
+        <AddTaskForm />
+        <SearchTaskForm />
         <TodoInfo />
         <Button
           onClick={() =>

@@ -14,7 +14,6 @@ const TodoInfo = () => {
   }, [tasks]);
 
   const handleClick = () => {
-    console.log("Mother Fucker");
   };
   return (
     <div className="todo__info">
