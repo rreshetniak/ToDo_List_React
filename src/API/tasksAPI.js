@@ -9,6 +9,16 @@ const tasksAPI = {
     return fetch(URL).then((response) => response.json());
   },
 
+  getById: (id) => {
+    return fetch(`${URL}/${id}`)
+      .then((response) => {
+        if(!response.ok) {
+          throw new Error ('Task not found');
+        }
+        return response.json()
+      })
+  },
+
   add: (task) => {
     return fetch(URL, {
       method: "POST",
